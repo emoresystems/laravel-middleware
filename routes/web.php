@@ -29,3 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/admindashboard', function(){
+    return 'You are on the admins dashboard';
+})->middleware('is_admin');
