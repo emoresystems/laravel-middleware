@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +35,6 @@ require __DIR__.'/auth.php';
 Route::get('/admindashboard', function(){
     return 'You are on the admins dashboard';
 })->middleware('is_admin');
+
+
+Route::resource('blogs', BlogController::class);
